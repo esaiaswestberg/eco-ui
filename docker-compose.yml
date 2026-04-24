@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   eco-ui:
     image: ghcr.io/esaiaswestberg/eco-ui:latest
