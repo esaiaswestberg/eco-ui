@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  eco-ui:
+    image: ghcr.io/esaiaswestberg/eco-ui:latest
+    container_name: eco-ui
+    ports:
+      - "8080:80"
+    restart: unless-stopped
