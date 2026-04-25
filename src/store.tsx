@@ -84,6 +84,10 @@ export const StoreProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       case 'contains': textMatches = descLower.includes(matchLower); break;
       case 'starts_with': textMatches = descLower.startsWith(matchLower); break;
       case 'ends_with': textMatches = descLower.endsWith(matchLower); break;
+      case 'not_exact': textMatches = descLower !== matchLower; break;
+      case 'not_contains': textMatches = !descLower.includes(matchLower); break;
+      case 'not_starts_with': textMatches = !descLower.startsWith(matchLower); break;
+      case 'not_ends_with': textMatches = !descLower.endsWith(matchLower); break;
       default: textMatches = false;
     }
 

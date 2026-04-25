@@ -3,6 +3,17 @@ import { useStore } from '../store';
 import { Trash2, Edit2, Save } from 'lucide-react';
 import type { Rule, MatchType } from '../types';
 
+const matchTypeLabel: Record<MatchType, string> = {
+  exact: 'Exact Match',
+  contains: 'Contains',
+  starts_with: 'Starts With',
+  ends_with: 'Ends With',
+  not_exact: 'Does Not Equal',
+  not_contains: 'Does Not Contain',
+  not_starts_with: 'Does Not Start With',
+  not_ends_with: 'Does Not End With'
+};
+
 const Rules: React.FC = () => {
   const { state, addRule, updateRule, deleteRule, applyRules } = useStore();
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -106,6 +117,10 @@ const Rules: React.FC = () => {
                 <option value="contains">Contains</option>
                 <option value="starts_with">Starts With</option>
                 <option value="ends_with">Ends With</option>
+                <option value="not_exact">Does Not Equal</option>
+                <option value="not_contains">Does Not Contain</option>
+                <option value="not_starts_with">Does Not Start With</option>
+                <option value="not_ends_with">Does Not End With</option>
               </select>
             </div>
           </div>
@@ -213,7 +228,7 @@ const Rules: React.FC = () => {
                 return (
                   <tr key={r.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 font-medium text-gray-800">{r.descriptionMatch}</td>
-                    <td className="px-6 py-4 text-gray-600 capitalize">{r.matchType.replace('_', ' ')}</td>
+                    <td className="px-6 py-4 text-gray-600">{matchTypeLabel[r.matchType]}</td>
                     <td className="px-6 py-4 text-gray-600">
                       {r.minAmount !== undefined || r.maxAmount !== undefined ? (
                         <>

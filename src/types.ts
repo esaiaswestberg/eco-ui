@@ -6,7 +6,7 @@ export interface Category {
   type: CategoryType;
 }
 
-export type MatchType = 'exact' | 'contains' | 'starts_with' | 'ends_with';
+export type MatchType = 'exact' | 'contains' | 'starts_with' | 'ends_with' | 'not_exact' | 'not_contains' | 'not_starts_with' | 'not_ends_with';
 
 export interface Rule {
   id: string;

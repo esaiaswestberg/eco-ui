@@ -466,6 +466,10 @@ const Upload: React.FC = () => {
                     <option value="contains">Contains</option>
                     <option value="starts_with">Starts With</option>
                     <option value="ends_with">Ends With</option>
+                    <option value="not_exact">Does Not Equal</option>
+                    <option value="not_contains">Does Not Contain</option>
+                    <option value="not_starts_with">Does Not Start With</option>
+                    <option value="not_ends_with">Does Not End With</option>
                   </select>
                   <input
                     type="text"
